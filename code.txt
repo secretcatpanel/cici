@@ -1,32 +1,36 @@
---[[
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
 
-		Gui2Lua™
-		10zOfficial
-		Version 1.0.0
+-- Instances: 3 | Scripts: 0 | Modules: 0 | Tags: 0
+local G2L = {};
 
-]]
+-- StarterGui.ScreenGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 
--- Instances
+-- StarterGui.ScreenGui.ImageLabel
+G2L["2"] = Instance.new("ImageLabel", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["2"]["Image"] = [[rbxassetid://10789878864]];
+G2L["2"]["Size"] = UDim2.new(0, 80, 0, 80);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["BackgroundTransparency"] = 1;
+G2L["2"]["Position"] = UDim2.new(0.08029, 0, 0.92204, 0);
 
-local ScreenGui = Instance.new("ScreenGui")
-local ImageLabel = Instance.new("ImageLabel")
-local UICorner = Instance.new("UICorner")
 
--- Properties
+-- StarterGui.ScreenGui.ImageLabel.UICorner
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
+G2L["3"]["CornerRadius"] = UDim.new(0, 200);
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-ImageLabel.Parent = ScreenGui
-ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
-ImageLabel.BackgroundTransparency = 1
-ImageLabel.BorderColor3 = Color3.new(0, 0, 0)
-ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(0.0802883804, 0, 0.922043025, 0)
-ImageLabel.Size = UDim2.new(0, 80, 0, 80)
-ImageLabel.Image = "rbxassetid://10789878864"
 
-UICorner.Parent = ImageLabel
-UICorner.CornerRadius = UDim.new(0, 200)
+return G2L["1"], require;
