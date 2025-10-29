@@ -11,10 +11,11 @@
 
 local ScreenGui = Instance.new("ScreenGui")
 local ImageLabel = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
 
 -- Properties
 
-ScreenGui.Parent = game.StarterGui.pls.Script.Script.Script.Script["Lyxx7"]
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 ImageLabel.Parent = ScreenGui
@@ -23,31 +24,9 @@ ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
 ImageLabel.BackgroundTransparency = 1
 ImageLabel.BorderColor3 = Color3.new(0, 0, 0)
 ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(0.499000013, 0, 0.5, 0)
+ImageLabel.Position = UDim2.new(0.0802883804, 0, 0.922043025, 0)
 ImageLabel.Size = UDim2.new(0, 80, 0, 80)
-ImageLabel.Image = "rbxassetid://83781106811653"
+ImageLabel.Image = "rbxassetid://10789878864"
 
--- Scripts
-
-local function WJPLOXL_fake_script() -- ScreenGui.LocalScript 
-	local script = Instance.new('LocalScript', ScreenGui)
-
-	local logo = script.Parent.ImageLabel
-	
-	local midpos = UDim2.new(0.499, 0, 0.5, 0)
-	local bottomleftpos = UDim2.new(0.045, 0, 0.91, 0)
-	
-	local debounce = false
-	
-	wait(1)
-	if not debounce then
-		debounce = true
-		logo:TweenPosition(midpos, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.5, true)
-		wait(0.9) 
-		logo:TweenPosition(bottomleftpos, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.5, false)
-		wait(0.7)
-		debounce = false
-	end
-	
-end
-coroutine.wrap(WJPLOXL_fake_script)()
+UICorner.Parent = ImageLabel
+UICorner.CornerRadius = UDim.new(0, 200)
